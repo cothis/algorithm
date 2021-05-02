@@ -28,7 +28,7 @@ console.log(count);
 function bfs(graph, r, c) {
     let queue = [[r, c]];
 
-    let result = false;
+    let result = graph[r][c] === 1;
 
     while (queue.length > 0) {
         let v = queue.shift();
@@ -36,7 +36,6 @@ function bfs(graph, r, c) {
         let nc = v[1];
         if (nr >= 0 && nc >= 0 && nr < row && nc < col) {
             let isOne = graph[nr][nc] === 1;
-            result |= isOne;
             graph[nr][nc] = 0;
 
             if (isOne) {
